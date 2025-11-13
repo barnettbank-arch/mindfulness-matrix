@@ -13,14 +13,14 @@
   <meta name="keywords" content="forest meditation, guided meditation, mindfulness meditation, cinematic meditation, relaxing nature video, stress relief, anxiety relief, sleep meditation, solfeggio 528hz, beach meditation, nature sounds, The Mindfulness Matrix, calming video, meditation for beginners">
   <meta name="author" content="The Mindfulness Matrix" />
 
-  <!-- Open Graph (link previews for Reddit, Facebook, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Forest of Stillness – Guided Meditation by The Mindfulness Matrix">
   <meta property="og:description" content="Relax into a cinematic forest meditation with gentle narration and subtle Solfeggio tones designed to soothe the nervous system and invite deep calm.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://barnettbank-arch.github.io/mindfulness-matrix/">
   <meta property="og:image" content="https://img.youtube.com/vi/crEhbeviKkA/maxresdefault.jpg">
 
-  <!-- Twitter / X card -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Forest of Stillness – Guided Meditation">
   <meta name="twitter:description" content="A cinematic guided forest meditation for calm, healing, and mindful presence.">
@@ -28,26 +28,32 @@
 
   <style>
     :root {
-      --bg: #050814;
-      --bg-alt: #070b1c;
-      --accent: #d4b26f;
-      --accent-soft: rgba(212,178,111,0.16);
-      --text: #f5f5f5;
-      --muted: #9da4c2;
-      --card: #0d1226;
+      --bg: #f7f5f0;
+      --bg-alt: #ffffff;
+      --border-subtle: #e2ddd1;
+      --accent: #2f6b4f;        /* forest green */
+      --accent-soft: #e1f0e7;
+      --accent-gold: #c7a15b;
+      --text-main: #222222;
+      --text-muted: #6f726e;
+      --pill-bg: #f2efe7;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #101631 0, #050814 52%);
-      color: var(--text);
+      background: radial-gradient(circle at top, #fdfbf7 0, #f7f5f0 52%, #f3f0e8 100%);
+      color: var(--text-main);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+
     a {
       color: var(--accent);
       text-decoration: none;
@@ -55,14 +61,16 @@
     a:hover {
       text-decoration: underline;
     }
+
     header {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(5,8,20,0.92), rgba(5,8,20,0.75), transparent);
-      border-bottom: 1px solid rgba(212,178,111,0.15);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(255,255,255,0.86), transparent);
+      border-bottom: 1px solid rgba(206,198,176,0.6);
     }
+
     .nav {
       max-width: 1080px;
       margin: 0 auto;
@@ -72,296 +80,359 @@
       justify-content: space-between;
       gap: 1rem;
     }
+
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.75rem;
     }
+
     .logo-circle {
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
-      border: 1px solid rgba(212,178,111,0.6);
-      background: radial-gradient(circle at 30% 20%, #fdf7e2 0, #e2c88b 22%, #273334 100%);
+      border: 1px solid rgba(199,161,91,0.8);
+      background:
+        radial-gradient(circle at 30% 20%, #fffdf5 0, #f4ead2 35%, #e0d1aa 55%, #f4fbf7 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 24px rgba(212,178,111,0.65);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.9),
+        0 8px 18px rgba(0,0,0,0.08);
     }
+
     .logo-circle span {
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.08em;
-      color: #071013;
+      color: #28352e;
       text-transform: uppercase;
     }
+
     .brand-title {
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       font-size: 0.78rem;
       text-transform: uppercase;
-      color: #f7f3e8;
+      color: #2c352f;
     }
+
     .tagline-mini {
-      font-size: 0.66rem;
-      color: var(--muted);
+      font-size: 0.68rem;
+      color: var(--text-muted);
     }
+
     .nav-right {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
     }
+
     .pill-link {
-      padding: 0.3rem 0.9rem;
+      padding: 0.4rem 1rem;
       border-radius: 999px;
-      border: 1px solid rgba(212,178,111,0.44);
-      background: radial-gradient(circle at 20% 0, rgba(212,178,111,0.28), transparent 52%);
-      color: #f7f3e8;
+      border: 1px solid rgba(47,107,79,0.25);
+      background: linear-gradient(to right, #fdfbf6, #f3f7f4);
+      color: #2f3b34;
       font-weight: 500;
       text-decoration: none;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
     }
+
     .pill-link:hover {
-      background: radial-gradient(circle at 20% 0, rgba(212,178,111,0.38), transparent 62%);
-      box-shadow: 0 0 18px rgba(212,178,111,0.4);
+      background: linear-gradient(to right, #f9f6ed, #e9f2ec);
+      box-shadow: 0 9px 20px rgba(0,0,0,0.06);
       text-decoration: none;
     }
+
     main {
       max-width: 1080px;
       margin: 0 auto;
       padding: 1.75rem 1.25rem 3rem;
     }
+
     .hero {
       display: grid;
-      grid-template-columns: minmax(0,1.5fr) minmax(0,1.4fr);
-      gap: 2rem;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1.3fr);
+      gap: 2.25rem;
       align-items: center;
-      padding-top: 0.75rem;
+      padding-top: 1.25rem;
       padding-bottom: 2.5rem;
     }
-    @media (max-width: 800px) {
+
+    @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0,1fr);
-        padding-top: 0.5rem;
+        padding-top: 0.75rem;
       }
     }
+
     .eyebrow {
       font-size: 0.72rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
     }
+
     h1 {
-      font-size: clamp(1.9rem, 4vw, 2.5rem);
-      line-height: 1.1;
-      letter-spacing: 0.06em;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.12;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
+      color: #1f2622;
     }
+
     h1 span {
       color: var(--accent);
     }
+
     .hero-sub {
-      font-size: 0.98rem;
-      color: var(--muted);
+      font-size: 1rem;
+      color: var(--text-muted);
       max-width: 32rem;
-      margin-bottom: 1.35rem;
+      margin-bottom: 0.9rem;
     }
+
     .hero-sub-2 {
-      font-size: 0.86rem;
-      color: #c6cbe2;
+      font-size: 0.9rem;
+      color: #565a56;
       max-width: 30rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
+
     .btn-primary {
       padding: 0.7rem 1.4rem;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, #e1c58b, #cda563);
-      color: #120f06;
+      background: linear-gradient(135deg, #2f6b4f, #3f8c65);
+      color: #fefdf9;
       font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow:
+        0 12px 26px rgba(0,0,0,0.16),
+        0 0 0 1px rgba(255,255,255,0.7);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid #c7c2b5;
+      background: #fbf8f1;
+      color: #4e524c;
       font-size: 0.86rem;
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.55), 0 0 22px rgba(212,178,111,0.65);
+      gap: 0.45rem;
     }
-    .btn-primary:hover {
-      filter: brightness(1.06);
-      transform: translateY(-1px);
-    }
-    .btn-ghost {
-      padding: 0.7rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(157,164,194,0.5);
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.84rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+
     .btn-ghost:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
+
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 1.25rem;
-      font-size: 0.76rem;
-      color: var(--muted);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
     }
+
     .meta-block {
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
+      gap: 0.2rem;
     }
+
     .meta-label {
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.68rem;
-      color: #7a83a9;
+      color: #8a8c86;
     }
+
     .meta-value {
-      color: #dee4ff;
+      color: #313530;
     }
+
     .card {
-      border-radius: 1.25rem;
-      background: radial-gradient(circle at top left, rgba(212,178,111,0.16), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(30,60,120,0.48), #050814 110%);
-      border: 1px solid rgba(122,131,169,0.45);
+      border-radius: 1.4rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-subtle);
       padding: 1rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.08),
+        0 0 0 1px rgba(255,255,255,0.9);
     }
+
     .player-shell {
-      border-radius: 0.9rem;
+      border-radius: 1rem;
       overflow: hidden;
-      background: radial-gradient(circle at top, #1c243c, #050814);
-      border: 1px solid rgba(122,131,169,0.7);
+      background: #000;
       position: relative;
     }
-    .player-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.14), transparent 55%);
-      pointer-events: none;
-    }
+
     .player-iframe {
       width: 100%;
       aspect-ratio: 16/9;
       border: none;
       display: block;
     }
+
     .player-caption {
-      padding: 0.75rem 0.85rem 0.35rem;
-      font-size: 0.78rem;
-      color: var(--muted);
+      padding: 0.8rem 0.3rem 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
+
+    .player-caption strong {
+      color: #323632;
+    }
+
     .pill-tag-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.25rem;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+      margin-bottom: 0.1rem;
     }
+
     .pill-tag {
-      padding: 0.15rem 0.6rem;
+      padding: 0.2rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(157,164,194,0.5);
-      font-size: 0.7rem;
-      color: #c8cee9;
-      background: rgba(5,8,20,0.95);
+      border: 1px solid rgba(207,199,176,0.9);
+      font-size: 0.72rem;
+      color: #4f524b;
+      background: var(--pill-bg);
     }
+
     .section {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       padding-top: 1.75rem;
-      border-top: 1px solid rgba(84,93,135,0.4);
+      border-top: 1px solid var(--border-subtle);
     }
+
     .section h2 {
-      font-size: 1.05rem;
-      letter-spacing: 0.16em;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #f5f5f5;
+      color: #33362f;
       margin-bottom: 0.85rem;
     }
+
     .section p {
-      font-size: 0.9rem;
-      color: #c2c7e3;
-      max-width: 44rem;
+      font-size: 0.92rem;
+      color: #5b5f59;
+      max-width: 46rem;
     }
+
     .grid-two {
       display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      grid-template-columns: minmax(0,1.05fr) minmax(0,1.05fr);
       gap: 1.5rem;
-      margin-top: 1rem;
+      margin-top: 1.1rem;
     }
+
     @media (max-width: 800px) {
       .grid-two {
         grid-template-columns: minmax(0,1fr);
       }
     }
+
     .mini-card {
       border-radius: 1rem;
-      padding: 0.9rem 1rem;
-      background: radial-gradient(circle at top, rgba(212,178,111,0.12), transparent 60%);
-      border: 1px solid rgba(122,131,169,0.45);
-      font-size: 0.86rem;
-      color: #d6dbff;
+      padding: 1rem 1.1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+      color: #454942;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
     }
+
     .mini-card h3 {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      margin-bottom: 0.4rem;
-      color: #f7f3e8;
+      margin-bottom: 0.45rem;
+      color: #343831;
     }
+
     .list {
-      margin-top: 0.5rem;
-      padding-left: 1rem;
+      margin-top: 0.55rem;
+      padding-left: 1.1rem;
     }
+
     .list li {
-      margin-bottom: 0.25rem;
-      font-size: 0.85rem;
-      color: #cbd1f0;
+      margin-bottom: 0.3rem;
+      font-size: 0.86rem;
+      color: #5a5f57;
     }
+
     footer {
-      border-top: 1px solid rgba(62,71,112,0.7);
-      padding: 1.4rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.6rem 1.25rem 2.3rem;
       margin-top: 2rem;
-      font-size: 0.76rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #fbf8f2;
     }
+
     .footer-inner {
       max-width: 1080px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 0.75rem;
+      gap: 0.8rem;
       align-items: center;
     }
+
     .social-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
+      gap: 0.7rem;
     }
+
     .social-row a {
-      font-size: 0.78rem;
-      color: #c3c9ea;
+      font-size: 0.8rem;
+      color: #3c4139;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 1rem;
+      }
+      .nav {
+        padding-inline: 1rem;
+      }
     }
   </style>
 </head>
@@ -372,12 +443,12 @@
         <div class="logo-circle"><span>MM</span></div>
         <div>
           <div class="brand-title">THE MINDFULNESS MATRIX</div>
-          <div class="tagline-mini">Cinematic guided meditations</div>
+          <div class="tagline-mini">Cinematic guided meditations for a calmer nervous system</div>
         </div>
       </div>
       <div class="nav-right">
         <a class="pill-link" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-          Visit the YouTube Channel
+          <span>Visit YouTube Channel</span>
         </a>
       </div>
     </div>
@@ -389,14 +460,14 @@
         <div class="eyebrow">Guided Meditation · Nature · Solfeggio</div>
         <h1><span>Forest of Stillness</span><br />The Mindfulness Matrix</h1>
         <p class="hero-sub">
-          Cinematic guided meditations that blend nature visuals, soothing narration, and Solfeggio frequencies to calm the nervous system and deepen mindfulness.
+          Cinematic guided meditations blending nature visuals, soothing narration, and subtle Solfeggio frequencies to calm the nervous system and deepen presence.
         </p>
         <p class="hero-sub-2">
-          Breathe in. Breathe out. Begin again. Explore meditations crafted for calm, sleep, emotional reset, and gentle presence.
+          Breathe in. Breathe out. Begin again. Explore sessions crafted for calm, sleep, emotional reset, and quiet, grounded awareness.
         </p>
         <div class="hero-actions">
-          <a class="btn-primary" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-            ▶ Watch on YouTube
+          <a class="btn-primary" href="https://www.youtube.com/watch?v=crEhbeviKkA" target="_blank" rel="noopener noreferrer">
+            ▶ Watch “Forest of Stillness” on YouTube
           </a>
           <a class="btn-ghost" href="#about">
             Learn more about the project
@@ -409,7 +480,7 @@
           </div>
           <div class="meta-block">
             <div class="meta-label">Format</div>
-            <div class="meta-value">Cinematic nature visuals + voice</div>
+            <div class="meta-value">Nature visuals + guided voice</div>
           </div>
           <div class="meta-block">
             <div class="meta-label">Frequency</div>
@@ -444,7 +515,7 @@
     <section class="section" id="about">
       <h2>About The Mindfulness Matrix</h2>
       <p>
-        The Mindfulness Matrix is a cinematic meditation project created to support nervous system calm, mindful presence, and emotional renewal. Each session weaves together nature cinematography, Mira&apos;s gentle voice, and subtle Solfeggio frequencies to help you slow down, breathe deeper, and reconnect with the part of you that is already still.
+        The Mindfulness Matrix is a cinematic meditation project created to support nervous system calm, mindful presence, and emotional renewal. Each session weaves together nature cinematography, gentle narration, and subtle Solfeggio frequencies to help you slow down, breathe deeper, and reconnect with the part of you that is already still.
       </p>
 
       <div class="grid-two" style="margin-top: 1.25rem;">
@@ -463,7 +534,7 @@
             <li>Headphones recommended for full immersion</li>
             <li>Use for evening wind-down or mindful breaks</li>
             <li>Watch the visuals or simply listen with eyes closed</li>
-            <li>Return to your favorite sessions as touchstones of calm</li>
+            <li>Return to favorite sessions as touchstones of calm</li>
           </ul>
         </div>
       </div>
@@ -518,13 +589,15 @@
             Subscribe on YouTube to receive new cinematic meditations as they&apos;re released. Forests, beaches, rain, and quiet sky — all crafted for inner stillness.
           </p>
           <p style="margin-top: 0.5rem;">
-            <a href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">Subscribe to The Mindfulness Matrix →</a>
+            <a href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
+              Subscribe to The Mindfulness Matrix →
+            </a>
           </p>
         </div>
         <div class="mini-card">
           <h3>Collaborations &amp; notes</h3>
           <p>
-            For mindful collaborations or to share how a session has supported you, reach out via your preferred platform (YouTube comments, social, or future contact link here).
+            For mindful collaborations or to share how a session has supported you, reach out via your preferred platform (YouTube comments, social, or a future contact page here).
           </p>
         </div>
       </div>
@@ -545,4 +618,3 @@
   </script>
 </body>
 </html>
-
