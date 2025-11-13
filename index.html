@@ -1,55 +1,885 @@
-<script>
-  // Set footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Mindfulness Matrix – Cinematic Guided Meditations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  // Approximate next new moon calculation
-  function getNextNewMoon() {
-    // Base: a known recent new moon (adjust as needed)
-    const base = new Date('2024-11-01T13:47:00Z');
-    const lunationMs = 29.5306 * 24 * 60 * 60 * 1000; // ~29.53 days
-    const now = new Date();
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="Wqvkfm7BZ9lZX8gT28HkCeC7-UY81wgDITd3e7D9rJI" />
 
-    let t = base.getTime();
-    while (t <= now.getTime()) {
-      t += lunationMs;
+  <!-- Basic SEO -->
+  <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, and soothing narration to calm the nervous system, reduce anxiety, and deepen presence." />
+  <meta name="keywords" content="forest meditation,guided meditation,mindfulness meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,The Mindfulness Matrix,calming video,meditation for beginners" />
+  <meta name="author" content="The Mindfulness Matrix" />
+
+  <!-- Open Graph (link previews) -->
+  <meta property="og:title" content="Forest of Stillness – Guided Meditation by The Mindfulness Matrix" />
+  <meta property="og:description" content="Relax into a cinematic forest meditation with gentle narration and subtle Solfeggio tones designed to soothe the nervous system and invite deep calm." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://barnettbank-arch.github.io/mindfulness-matrix/" />
+  <meta property="og:image" content="https://img.youtube.com/vi/crEhbeviKkA/maxresdefault.jpg" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Forest of Stillness – Guided Meditation" />
+  <meta name="twitter:description" content="A cinematic guided forest meditation for calm, healing, and mindful presence." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/crEhbeviKkA/maxresdefault.jpg" />
+
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --bg-alt: #ffffff;
+      --border-subtle: #e2ddd1;
+      --accent: #2f6b4f;
+      --accent-soft: rgba(47, 107, 79, 0.08);
+      --text: #1e2525;
+      --muted: #6f746b;
+      --card: #ffffff;
     }
-    return new Date(t);
-  }
 
-  const nextNewMoon = getNextNewMoon();
-
-  function updateMoonCountdown() {
-    const now = new Date();
-    const diff = nextNewMoon - now;
-
-    const bannerEl = document.getElementById('moon-banner-timer');
-    const bigEl = document.getElementById('moon-timer');
-
-    if (!bannerEl && !bigEl) return;
-
-    if (diff <= 0) {
-      if (bannerEl) bannerEl.textContent = 'Happening now';
-      if (bigEl) bigEl.textContent = 'New moon window is open';
-      return;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / (24 * 3600));
-    const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fdfaf3 0, #f3efe5 50%, #e8e0cf 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    const text =
-      days + 'd · ' +
-      hours + 'h · ' +
-      minutes + 'm · ' +
-      seconds + 's';
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-    if (bannerEl) bannerEl.textContent = text;
-    if (bigEl) bigEl.textContent = text;
-  }
+    a:hover {
+      text-decoration: underline;
+    }
 
-  // Initial call + live ticking countdown
-  updateMoonCountdown();
-  setInterval(updateMoonCountdown, 1000);
-</script>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(247, 245, 240, 0.96), rgba(247, 245, 240, 0.85), transparent);
+      border-bottom: 1px solid rgba(173, 164, 140, 0.4);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 107, 79, 0.4);
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #f2e4bc 22%, #d3e2d5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 16px rgba(47, 107, 79, 0.35);
+    }
+
+    .logo-circle span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #30413a;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: #2b352f;
+    }
+
+    .tagline-mini {
+      font-size: 0.66rem;
+      color: var(--muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+    }
+
+    .pill-link {
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 107, 79, 0.35);
+      background: radial-gradient(circle at 20% 0, rgba(47, 107, 79, 0.16), transparent 60%);
+      color: #213329;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .pill-link:hover {
+      background: radial-gradient(circle at 20% 0, rgba(47, 107, 79, 0.24), transparent 70%);
+      box-shadow: 0 0 14px rgba(47, 107, 79, 0.35);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 3rem;
+    }
+
+    /* Small banner countdown near top */
+    .moon-banner {
+      margin: 0 auto 1.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 107, 79, 0.25);
+      background: linear-gradient(90deg, rgba(47, 107, 79, 0.08), rgba(247, 245, 240, 0.95));
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #324539;
+    }
+
+    .moon-banner-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: #496854;
+    }
+
+    .moon-banner-timer {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: center;
+      padding-top: 0.75rem;
+      padding-bottom: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 0.5rem;
+      }
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-sub-2 {
+      font-size: 0.86rem;
+      color: #5e645a;
+      max-width: 30rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #e1c58b, #cda563);
+      color: #120f06;
+      font-weight: 600;
+      font-size: 0.86rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(127, 135, 118, 0.6);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.84rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .meta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      color: #8a8f81;
+    }
+
+    .meta-value {
+      color: #383f37;
+    }
+
+    .card {
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(242, 237, 222, 0.95));
+      border: 1px solid rgba(193, 184, 158, 0.8);
+      padding: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .player-shell {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(193, 184, 158, 0.9);
+      position: relative;
+    }
+
+    .player-iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+    }
+
+    .player-caption {
+      padding: 0.75rem 0.85rem 0.35rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .pill-tag {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(157, 164, 138, 0.6);
+      font-size: 0.7rem;
+      color: #545b4b;
+      background: rgba(252, 249, 241, 0.95);
+    }
+
+    .section {
+      margin-top: 1.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(193, 184, 158, 0.7);
+    }
+
+    .section h2 {
+      font-size: 1.05rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #30362f;
+      margin-bottom: 0.85rem;
+    }
+
+    .section p {
+      font-size: 0.9rem;
+      color: #51574c;
+      max-width: 44rem;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .grid-two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .mini-card {
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.86rem;
+      color: #474e43;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .mini-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.4rem;
+      color: #283127;
+    }
+
+    .list {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+
+    .list li {
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      color: #545b4b;
+    }
+
+    /* Moon section visuals */
+    .moon-hero {
+      margin-top: 1rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .moon-hero {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+      }
+    }
+
+    .moon-orb-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .moon-orb {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, #ffffff 0, #f9f3e5 30%, #ddd4c4 60%, #b3a897 100%);
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 60px rgba(47, 107, 79, 0.35),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+      animation: moon-glow 14s ease-in-out infinite alternate;
+    }
+
+    .moon-orb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.7), transparent 45%),
+        radial-gradient(circle at 65% 65%, rgba(0, 0, 0, 0.15), transparent 55%);
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .moon-big-timer {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .moon-big-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: #496854;
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    .moon-big-note {
+      font-size: 0.85rem;
+      color: #555c50;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .moon-copy-block {
+      font-size: 0.9rem;
+      color: #4d5448;
+    }
+
+    @keyframes moon-glow {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        box-shadow:
+          0 0 20px rgba(255, 255, 255, 0.8),
+          0 0 60px rgba(47, 107, 79, 0.35),
+          0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+      100% {
+        transform: translateY(-8px) rotate(6deg);
+        box-shadow:
+          0 0 26px rgba(255, 255, 255, 0.9),
+          0 0 70px rgba(47, 107, 79, 0.4),
+          0 22px 46px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    footer {
+      border-top: 1px solid rgba(193, 184, 158, 0.7);
+      padding: 1.4rem 1.25rem 2.2rem;
+      margin-top: 2rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .social-row a {
+      font-size: 0.78rem;
+      color: #4e554a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-circle"><span>MM</span></div>
+        <div>
+          <div class="brand-title">THE MINDFULNESS MATRIX</div>
+          <div class="tagline-mini">Cinematic guided meditations for a calmer nervous system</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a class="pill-link" href="#moon-rituals">
+          <span>Moon Rituals</span>
+        </a>
+        <a class="pill-link" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
+          <span>Visit YouTube Channel</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Small countdown banner -->
+    <div class="moon-banner">
+      <span class="moon-banner-label">Next new moon:</span>
+      <span class="moon-banner-timer" id="moon-banner-timer">Calculating…</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Guided Meditation · Nature · Solfeggio</div>
+        <h1><span>Forest of Stillness</span><br />The Mindfulness Matrix</h1>
+        <p class="hero-sub">
+          Cinematic guided meditations that blend nature visuals, soothing narration, and Solfeggio frequencies to calm the nervous system and deepen mindfulness.
+        </p>
+        <p class="hero-sub-2">
+          Breathe in. Breathe out. Begin again. Explore meditations crafted for calm, sleep, emotional reset, and gentle presence.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
+            ▶ Watch on YouTube
+          </a>
+          <a class="btn-ghost" href="#about">
+            Learn more about the project
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-block">
+            <div class="meta-label">Created for</div>
+            <div class="meta-value">Calm · Sleep · Mindful reset</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Format</div>
+            <div class="meta-value">Cinematic nature visuals + voice</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Frequency</div>
+            <div class="meta-value">528 Hz Solfeggio (subtle)</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="player-shell">
+            <iframe class="player-iframe"
+              src="https://www.youtube.com/embed/crEhbeviKkA"
+              title="Forest of Stillness – Guided Meditation by The Mindfulness Matrix"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="player-caption">
+            <strong>Featured Session:</strong> Forest of Stillness — a guided journey into calm, grounding, and mindful presence.
+            <div class="pill-tag-row">
+              <span class="pill-tag">Guided meditation</span>
+              <span class="pill-tag">Forest ambience</span>
+              <span class="pill-tag">Anxiety relief</span>
+              <span class="pill-tag">Sleep-friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>About The Mindfulness Matrix</h2>
+      <p>
+        The Mindfulness Matrix is a cinematic meditation project created to support nervous system calm, mindful presence, and emotional renewal. Each session weaves together nature cinematography, Mira&apos;s gentle voice, and subtle Solfeggio frequencies to help you slow down, breathe deeper, and reconnect with the part of you that is already still.
+      </p>
+
+      <div class="grid-two" style="margin-top: 1.25rem;">
+        <div class="mini-card">
+          <h3>What you&apos;ll find</h3>
+          <ul class="list">
+            <li>Guided meditations for calm, focus, and sleep</li>
+            <li>Forest, beach, and nature-based visual journeys</li>
+            <li>Soft breathwork cues and grounding practices</li>
+            <li>Solfeggio-enhanced soundscapes (e.g., 528 Hz)</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h3>Best ways to listen</h3>
+          <ul class="list">
+            <li>Headphones recommended for full immersion</li>
+            <li>Use for evening wind-down or mindful breaks</li>
+            <li>Watch the visuals or simply listen with eyes closed</li>
+            <li>Return to your favorite sessions as touchstones of calm</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERIES & PLAYLISTS -->
+    <section class="section">
+      <h2>Series &amp; Playlists</h2>
+      <p>
+        Sessions are organized into simple series so you can choose the kind of calm your system needs today.
+      </p>
+
+      <div class="grid-two" style="margin-top: 1.2rem;">
+        <div class="mini-card">
+          <h3>Forest of Stillness</h3>
+          <p>
+            Grounding journeys through ancient forests, morning mist, and quiet, dappled light. Designed for anxiety relief, emotional reset, and gentle regulation.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Waves of Stillness</h3>
+          <p>
+            Sunrise and sunset beach meditations with soft wave sounds and horizon-facing visuals. Ideal for evening wind-down, sleep, and letting go.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top: 1rem;">
+        <div class="mini-card">
+          <h3>Nature for the Nervous System</h3>
+          <p>
+            A mix of forests, shoreline, and sky meditations curated specifically to support nervous system calm, safety, and gentle grounding.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Future journeys</h3>
+          <p>
+            Upcoming sessions include mountain dawns, rain-soaked windows, and starfield meditations built around specific Solfeggio frequencies for themed emotional support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOON RITUALS -->
+    <section class="section" id="moon-rituals">
+      <h2>Moon Rituals &amp; Intention Setting</h2>
+
+      <div class="moon-hero">
+        <div class="moon-copy-block">
+          <p>
+            The moon moves in cycles, and many people use the <strong>new moon</strong> to plant intentions
+            and the <strong>full moon</strong> to release what they&apos;re ready to let go of. You don&apos;t
+            have to believe in anything mystical to benefit from it – the ritual itself is a way of pausing,
+            reflecting, and choosing what you want to invite into your life.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            You can keep things simple: a candle, a few honest sentences on paper, and a moment to breathe and say,
+            &quot;I&apos;m ready for this to shift.&quot;
+          </p>
+        </div>
+
+        <div class="moon-orb-wrap">
+          <div class="moon-orb"></div>
+          <div class="moon-big-timer" id="moon-timer">Calculating…</div>
+          <div class="moon-big-label">Time until next new moon</div>
+          <div class="moon-big-note">
+            A powerful window for <strong>setting intentions</strong>, journaling, and visualizing the life you&apos;re growing toward.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top: 1.3rem;">
+        <div class="mini-card">
+          <h3>Simple new moon ritual</h3>
+          <p style="font-size: 0.86rem;">
+            On or near the new moon:
+          </p>
+          <ul class="list">
+            <li>Light a <strong>white candle</strong> for clarity, or a <strong>green candle</strong> for growth/abundance.</li>
+            <li>Take a few slow breaths to settle your body.</li>
+            <li>Write 3–5 intentions in the present tense, as if they&apos;re already unfolding.</li>
+            <li>Read them out loud slowly, with gratitude.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>How to word intentions</h3>
+          <p style="font-size: 0.86rem;">
+            Intentions work best when they are <strong>specific, kind, and present-tense</strong>.
+            You&apos;re not begging the universe; you&apos;re partnering with it.
+          </p>
+          <ul class="list" style="margin-top: 0.6rem;">
+            <li>
+              Instead of: <em>&quot;I don&apos;t want to be anxious anymore.&quot;</em><br />
+              Try: <em>&quot;I am learning to feel safe slowing down, one breath at a time.&quot;</em>
+            </li>
+            <li>
+              Instead of: <em>&quot;Please send me money.&quot;</em><br />
+              Try: <em>&quot;I am opening to aligned opportunities that support me financially and creatively.&quot;</em>
+            </li>
+            <li>
+              Instead of: <em>&quot;I&apos;m scared of being alone.&quot;</em><br />
+              Try: <em>&quot;I am calling in relationships that feel mutual, healthy, and nourishing.&quot;</em>
+            </li>
+          </ul>
+          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+            You can close by saying something like:
+            <em>&quot;Thank you for the ways this is already shifting, even if I can&apos;t see it yet.&quot;</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top: 1.2rem;">
+        <div class="mini-card">
+          <h3>Full moon release</h3>
+          <p style="font-size: 0.86rem;">
+            Around the full moon, you can do a simple <strong>letting-go ritual</strong>. Use a darker
+            candle (deep blue, purple, or black) and name what you&apos;re ready to release:
+          </p>
+          <ul class="list" style="margin-top: 0.6rem;">
+            <li>Old stories about yourself</li>
+            <li>Patterns that exhaust you</li>
+            <li>Relationships or habits that no longer feel aligned</li>
+          </ul>
+          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+            You might write them down and say:
+            <em>&quot;I release this with love. Thank you for what it taught me, and I&apos;m ready to move forward.&quot;</em>
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Make it your own</h3>
+          <p style="font-size: 0.86rem;">
+            There&apos;s no one &quot;right&quot; way to do moon work. You can add:
+          </p>
+          <ul class="list" style="margin-top: 0.6rem;">
+            <li>Music or a guided meditation</li>
+            <li>Crystals or objects that feel meaningful</li>
+            <li>A bath, a walk under the sky, or journaling afterwards</li>
+          </ul>
+          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+            The point isn&apos;t perfection – it&apos;s presence. A few honest minutes with yourself,
+            on purpose, is already powerful work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section class="section">
+      <h2>Connect &amp; Follow</h2>
+      <p>
+        The Mindfulness Matrix is an evolving project. If a particular session resonates with you, sharing how it landed can help shape future journeys.
+      </p>
+      <div class="grid-two" style="margin-top: 1.1rem;">
+        <div class="mini-card">
+          <h3>Stay in the loop</h3>
+          <p>
+            Subscribe on YouTube to receive new cinematic meditations as they&apos;re released. Forests, beaches, rain, and quiet sky — all crafted for inner stillness.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <a href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">Subscribe to The Mindfulness Matrix →</a>
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Collaborations &amp; notes</h3>
+          <p>
+            For mindful collaborations or to share how a session has supported you, reach out via your preferred platform (YouTube comments, social, or a future contact page here).
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> The Mindfulness Matrix · Breathe in. Breathe out. Begin again.</div>
+      <div class="social-row">
+        <a href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Approximate next new moon calculation
+    function getNextNewMoon() {
+      // A recent known new moon date (UTC). This is just for an approximate countdown.
+      const base = new Date('2024-11-01T13:47:00Z');
+      const lunationMs = 29.5306 * 24 * 60 * 60 * 1000; // ~29.53 days
+      const now = new Date();
+
+      let t = base.getTime();
+      while (t <= now.getTime()) {
+        t += lunationMs;
+      }
+      return new Date(t);
+    }
+
+    const nextNewMoon = getNextNewMoon();
+
+    function updateMoonCountdown() {
+      const now = new Date();
+      const diff = nextNewMoon - now;
+
+      const bannerEl = document.getElementById('moon-banner-timer');
+      const bigEl = document.getElementById('moon-timer');
+
+      if (!bannerEl && !bigEl) return;
+
+      if (diff <= 0) {
+        if (bannerEl) bannerEl.textContent = 'Happening now';
+        if (bigEl) bigEl.textContent = 'New moon window is open';
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24 * 3600));
+      const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      const text =
+        days + 'd · ' +
+        hours + 'h · ' +
+        minutes + 'm · ' +
+        seconds + 's';
+
+      if (bannerEl) bannerEl.textContent = text;
+      if (bigEl) bigEl.textContent = text;
+    }
+
+    // Initial call + live ticking countdown
+    updateMoonCountdown();
+    setInterval(updateMoonCountdown, 1000);
+  </script>
+</body>
+</html>
+
