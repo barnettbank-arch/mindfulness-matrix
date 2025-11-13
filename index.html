@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +11,8 @@
   <meta name="google-site-verification" content="Wqvkfm7BZ9lZX8gT28HkCeC7-UY81wgDITd3e7D9rJI" />
 
   <!-- Basic SEO -->
-  <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, moon rituals, breathwork, and daily tarot reflections for nervous system calm and mindful presence.">
-  <meta name="keywords" content="forest meditation,guided meditation,mindfulness,meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,moon rituals,breathwork,tarot reading,The Mindfulness Matrix,calming video,meditation for beginners">
+  <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, moon rituals, breathwork, daily tarot reflections, and simple horoscope-style insights for nervous system calm and mindful presence.">
+  <meta name="keywords" content="forest meditation,guided meditation,mindfulness,meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,moon rituals,breathwork,tarot reading,horoscope,The Mindfulness Matrix,calming video,meditation for beginners">
   <meta name="author" content="The Mindfulness Matrix" />
 
   <!-- Open Graph -->
@@ -89,7 +91,6 @@
       gap: 0.7rem;
     }
 
-    /* original “MM” logo circle */
     .logo-circle {
       width: 38px;
       height: 38px;
@@ -322,17 +323,20 @@
     }
 
     .player-caption {
-      padding: 0.6rem 0.7rem 0.4rem;
+      padding: 0.6rem 0.7rem 0.6rem;
       font-size: 0.8rem;
       color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
 
     .pill-tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.35rem;
-      margin-bottom: 0.25rem;
+      margin-top: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .pill-tag {
@@ -342,6 +346,29 @@
       font-size: 0.7rem;
       color: #4b5563;
       background: #f3f4f6;
+    }
+
+    .btn-primary-small {
+      align-self: flex-start;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2f6f5a, #46a17f);
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      box-shadow: 0 12px 28px rgba(15,23,42,0.3);
+    }
+
+    .btn-primary-small:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      text-decoration: none;
     }
 
     /* inline moon banner on home */
@@ -662,6 +689,95 @@
       margin-top: 0.5rem;
     }
 
+    /* Horoscope section */
+
+    .horoscope-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .horoscope-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .horoscope-card {
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.06);
+      font-size: 0.86rem;
+      color: #374151;
+    }
+
+    .horoscope-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.5rem;
+      color: var(--accent-strong);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .field label {
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    .field input {
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148,163,184,0.7);
+      padding: 0.45rem 0.6rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    .field input:focus {
+      outline: none;
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(47,111,90,0.4);
+      background: #ffffff;
+    }
+
+    .horoscope-output {
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      border-top: 1px dashed rgba(148,163,184,0.6);
+      font-size: 0.86rem;
+      color: #374151;
+      white-space: pre-line;
+    }
+
+    .hint {
+      font-size: 0.76rem;
+      color: #9ca3af;
+      margin-top: 0.35rem;
+    }
+
     /* FOOTER */
 
     footer {
@@ -709,8 +825,9 @@
         <a class="pill-link" href="#moon-rituals">Moon Rituals</a>
         <a class="pill-link" href="#breath-library">Breath Library</a>
         <a class="pill-link" href="#tarot">Daily Tarot</a>
+        <a class="pill-link" href="#horoscope">Daily Horoscope</a>
         <a class="pill-link" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-          Visit YouTube
+          YouTube Channel
         </a>
       </div>
     </div>
@@ -728,14 +845,6 @@
         <p class="hero-sub-2">
           Breathe in. Breathe out. Begin again. Explore meditations crafted for calm, sleep, emotional reset, and gentle presence.
         </p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-            ▶ Watch on YouTube
-          </a>
-          <a class="btn-ghost" href="#moon-rituals">
-            Next new moon ritual window →
-          </a>
-        </div>
         <div class="hero-meta">
           <div class="meta-block">
             <div class="meta-label">Created for</div>
@@ -772,13 +881,18 @@
             </iframe>
           </div>
           <div class="player-caption">
-            <strong>Featured Session:</strong> Forest of Stillness — a guided journey into calm, grounding, and mindful presence.
+            <div>
+              <strong>Featured Session:</strong> Forest of Stillness — a guided journey into calm, grounding, and mindful presence.
+            </div>
             <div class="pill-tag-row">
               <span class="pill-tag">Guided meditation</span>
               <span class="pill-tag">Forest ambience</span>
               <span class="pill-tag">Anxiety relief</span>
               <span class="pill-tag">Sleep-friendly</span>
             </div>
+            <a class="btn-primary-small" href="https://www.youtube.com/watch?v=crEhbeviKkA" target="_blank" rel="noopener noreferrer">
+              ▶ Watch on YouTube
+            </a>
           </div>
         </div>
       </div>
@@ -950,6 +1064,92 @@
         </div>
       </div>
     </section>
+
+    <!-- DAILY HOROSCOPE -->
+    <section class="section" id="horoscope">
+      <h2>Daily Horoscope &amp; Alignment</h2>
+      <p>
+        A simple, reflective horoscope-style check-in inspired by your birth details. This isn&apos;t clinical astrology — it&apos;s a way to name your current themes, and optionally explore how your energy and someone else&apos;s might interact today.
+      </p>
+
+      <div class="horoscope-grid">
+        <div class="horoscope-card">
+          <h3>Your cosmic snapshot</h3>
+          <p>
+            Enter your birth details for a gentle overview of today&apos;s vibe for you.
+          </p>
+
+          <div class="field">
+            <label for="user-name">Your name (optional)</label>
+            <input id="user-name" type="text" placeholder="Aurora, Josh, etc." />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="user-date">Birth date</label>
+              <input id="user-date" type="date" />
+            </div>
+            <div class="field">
+              <label for="user-time">Birth time (if known)</label>
+              <input id="user-time" type="time" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="user-place">Birth place (city, country)</label>
+            <input id="user-place" type="text" placeholder="Los Angeles, CA" />
+          </div>
+
+          <button class="btn-outline" id="generate-horoscope">
+            Generate today&apos;s reading
+          </button>
+
+          <div class="hint">
+            Your information never leaves this page — everything is generated in your browser only.
+          </div>
+
+          <div class="horoscope-output" id="horoscope-output"></div>
+        </div>
+
+        <div class="horoscope-card">
+          <h3>Connection &amp; compatibility</h3>
+          <p>
+            Curious about how your energy mixes with someone else&apos;s today? Add their details for a light-touch &quot;alignment&quot; reflection.
+          </p>
+
+          <div class="field">
+            <label for="friend-name">Their name (optional)</label>
+            <input id="friend-name" type="text" placeholder="Partner, friend, collaborator..." />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="friend-date">Their birth date</label>
+              <input id="friend-date" type="date" />
+            </div>
+            <div class="field">
+              <label for="friend-time">Their birth time (if known)</label>
+              <input id="friend-time" type="time" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="friend-place">Their birth place</label>
+            <input id="friend-place" type="text" placeholder="City, country" />
+          </div>
+
+          <button class="btn-outline" id="generate-alignment">
+            Generate alignment reflection
+          </button>
+
+          <div class="hint">
+            Think of this as a conversation starter, not a verdict. Use it for journaling or shared reflection.
+          </div>
+
+          <div class="horoscope-output" id="alignment-output"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -965,8 +1165,9 @@
     // footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // --- NEW MOON COUNTDOWN (to the second) ---
-    // TODO: update this date to the actual next new moon in your timezone
+    // --- LIVE NEW MOON COUNTDOWN (updates every second) ---
+    // TODO: update this date when the next new moon changes.
+    // Use your local time zone if you want it exact.
     const nextNewMoon = new Date("2025-11-29T00:00:00Z");
 
     function formatDiff(diffMs) {
@@ -978,9 +1179,9 @@
       const seconds = totalSeconds % 60;
       return (
         days + "d " +
-        hours + "h " +
-        minutes + "m " +
-        seconds + "s"
+        hours.toString().padStart(2, "0") + "h " +
+        minutes.toString().padStart(2, "0") + "m " +
+        seconds.toString().padStart(2, "0") + "s"
       );
     }
 
@@ -996,10 +1197,10 @@
       if (small) small.textContent = label;
     }
 
-    updateMoonTimers();            // initial paint
-    setInterval(updateMoonTimers, 1000); // update every second
+    updateMoonTimers();                 // initial paint
+    setInterval(updateMoonTimers, 1000); // true live countdown
 
-    // --- SIMPLE FOREST TAROT DECK (works, no broken state) ---
+    // --- SIMPLE FOREST TAROT DECK ---
 
     const tarotDeck = [];
 
@@ -1007,7 +1208,6 @@
       tarotDeck.push({ name, keywords, meaning, prompt });
     }
 
-    // a small themed subset (can expand later)
     addCard(
       "The Wanderer (The Fool)",
       "new path, trust, beginner’s heart",
@@ -1069,8 +1269,112 @@
         renderCard(card);
       });
     }
+
+    // --- DAILY HOROSCOPE STYLE READER (in-browser only) ---
+
+    function buildPersonalReading(name, dateStr, timeStr, place) {
+      const now = new Date();
+      const todaySeed = now.getFullYear() * 10000 + (now.getMonth()+1) * 100 + now.getDate();
+
+      let base = todaySeed;
+      if (dateStr) base += new Date(dateStr).getDate() || 0;
+      if (timeStr) {
+        const [h, m] = timeStr.split(":").map(Number);
+        base += (h || 0) + (m || 0);
+      }
+      if (place) base += place.length;
+
+      function pick(arr) {
+        const idx = base % arr.length;
+        base = (base * 9301 + 49297) % 233280; // tiny pseudo-random step
+        return arr[idx];
+      }
+
+      const tone = pick([
+        "softly expansive",
+        "grounded and steady",
+        "quietly electric",
+        "tender but honest",
+        "deeply reflective",
+        "light, curious, and open"
+      ]);
+
+      const focus = pick([
+        "emotional honesty",
+        "creative expression",
+        "rest and nervous system repair",
+        "connection and conversation",
+        "money and practical decisions",
+        "body wisdom and comfort"
+      ]);
+
+      const action = pick([
+        "take one small action that your future self will thank you for",
+        "say no to one thing that drains you",
+        "share something true with someone safe",
+        "schedule a pocket of intentional rest",
+        "let yourself daydream without immediately turning it into a to-do list",
+        "notice one old story you’re ready to outgrow"
+      ]);
+
+      const nameLabel = name ? `${name}, ` : "You ";
+
+      return (
+        `${nameLabel}are moving through a ${tone} kind of day.\n\n` +
+        `The energy around you is nudging you toward ${focus}. ` +
+        `Nothing has to be fixed all at once — small, sincere moves count.\n\n` +
+        `If you do just one thing today, ${action}.`
+      );
+    }
+
+    function buildAlignmentReading(userName, friendName) {
+      const you = userName || "You";
+      const them = friendName || "they";
+
+      const dynamics = [
+        `${you} and ${them} might feel more on the same page emotionally today. It’s a good day for gentle honesty and naming what you each need.`,
+        `There’s a bit of push-pull energy between ${you} and ${them} right now. If something feels off, slow down the reaction and stay curious instead of defensive.`,
+        `${you} and ${them} may share a spark of creative, playful energy today. Make space for laughter, inside jokes, or shared dreams.`,
+        `Today supports practical, grounded conversations between ${you} and ${them}. Talk about logistics, plans, or shared goals without rushing the outcome.`,
+        `${you} and ${them} might be mirroring each other’s sensitivity more than usual. Extra kindness — especially in tone and timing — will go a long way.`
+      ];
+
+      const idx = (new Date().getDate() + (userName ? userName.length : 0) + (friendName ? friendName.length : 0)) % dynamics.length;
+      return dynamics[idx];
+    }
+
+    const personalBtn = document.getElementById("generate-horoscope");
+    const alignmentBtn = document.getElementById("generate-alignment");
+
+    if (personalBtn) {
+      personalBtn.addEventListener("click", () => {
+        const name = document.getElementById("user-name").value.trim();
+        const dateStr = document.getElementById("user-date").value;
+        const timeStr = document.getElementById("user-time").value;
+        const place = document.getElementById("user-place").value.trim();
+        const out = document.getElementById("horoscope-output");
+
+        if (!dateStr && !timeStr && !place && !name) {
+          out.textContent = "Add at least one detail (date, time, place, or name) so we can shape today’s reflection around you.";
+          return;
+        }
+        out.textContent = buildPersonalReading(name, dateStr, timeStr, place);
+      });
+    }
+
+    if (alignmentBtn) {
+      alignmentBtn.addEventListener("click", () => {
+        const youName = document.getElementById("user-name").value.trim();
+        const friendName = document.getElementById("friend-name").value.trim();
+        const out = document.getElementById("alignment-output");
+
+        if (!friendName && !youName) {
+          out.textContent = "Add at least one name so we can frame the alignment reflection.";
+          return;
+        }
+        out.textContent = buildAlignmentReading(youName, friendName);
+      });
+    }
   </script>
 </body>
 </html>
-
-
