@@ -148,6 +148,34 @@
       padding: 1.75rem 1.25rem 3rem;
     }
 
+    /* Small banner countdown near top */
+    .moon-banner {
+      margin: 0 auto 1.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 107, 79, 0.25);
+      background: linear-gradient(90deg, rgba(47, 107, 79, 0.08), rgba(247, 245, 240, 0.95));
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #324539;
+    }
+
+    .moon-banner-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: #496854;
+    }
+
+    .moon-banner-timer {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.4fr);
@@ -378,32 +406,98 @@
       color: #545b4b;
     }
 
-    .moon-countdown {
-      padding: 0.75rem 0.85rem;
-      border-radius: 0.9rem;
-      background: var(--accent-soft);
-      border: 1px solid rgba(47, 107, 79, 0.28);
+    /* Moon section visuals */
+    .moon-hero {
+      margin-top: 1rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .moon-hero {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+      }
+    }
+
+    .moon-orb-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .moon-orb {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, #ffffff 0, #f9f3e5 30%, #ddd4c4 60%, #b3a897 100%);
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 60px rgba(47, 107, 79, 0.35),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+      animation: moon-glow 12s ease-in-out infinite alternate;
+    }
+
+    .moon-orb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.7), transparent 45%),
+        radial-gradient(circle at 65% 65%, rgba(0, 0, 0, 0.15), transparent 55%);
+      mix-blend-mode: soft-light;
+    }
+
+    .moon-big-timer {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .moon-big-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: #496854;
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    .moon-big-note {
+      font-size: 0.85rem;
+      color: #555c50;
+      text-align: center;
       margin-top: 0.5rem;
     }
 
-    .moon-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #355945;
-      margin-bottom: 0.3rem;
+    .moon-copy-block {
+      font-size: 0.9rem;
+      color: #4d5448;
     }
 
-    .moon-timer {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-
-    .moon-note {
-      font-size: 0.8rem;
-      color: #4f5a52;
+    @keyframes moon-glow {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        box-shadow:
+          0 0 20px rgba(255, 255, 255, 0.8),
+          0 0 60px rgba(47, 107, 79, 0.35),
+          0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+      100% {
+        transform: translateY(-4px) rotate(2deg);
+        box-shadow:
+          0 0 26px rgba(255, 255, 255, 0.9),
+          0 0 80px rgba(47, 107, 79, 0.45),
+          0 22px 46px rgba(0, 0, 0, 0.4);
+      }
     }
 
     footer {
@@ -461,6 +555,12 @@
   </header>
 
   <main>
+    <!-- Small global countdown banner -->
+    <div class="moon-banner">
+      <span class="moon-banner-label">Next new moon in</span>
+      <span class="moon-banner-timer" id="moon-timer-main">Calculating…</span>
+    </div>
+
     <section class="hero">
       <div>
         <div class="eyebrow">Guided Meditation · Nature · Solfeggio</div>
@@ -587,34 +687,50 @@
 
     <section class="section" id="moon-rituals">
       <h2>Moon Rituals &amp; Intention Setting</h2>
-      <p>
-        The moon moves in cycles, and many people use the <strong>new moon</strong> to plant intentions
-        and the <strong>full moon</strong> to release what they&apos;re ready to let go of. You don&apos;t
-        have to believe in anything mystical to benefit from it – the ritual itself is a way of pausing,
-        reflecting, and choosing what you want to invite into your life.
-      </p>
+
+      <div class="moon-hero">
+        <div class="moon-orb-wrap">
+          <div>
+            <div class="moon-orb"></div>
+            <div class="moon-big-label">Next new moon in</div>
+            <div class="moon-big-timer" id="moon-timer">Calculating…</div>
+            <div class="moon-big-note">
+              Use this window to slow down, reset, and choose what you&apos;re ready to grow next.
+            </div>
+          </div>
+        </div>
+
+        <div class="moon-copy-block">
+          <p>
+            The moon moves in cycles, and many people use the <strong>new moon</strong> to plant intentions
+            and the <strong>full moon</strong> to release what they&apos;re ready to let go of. You don&apos;t
+            have to believe in anything mystical to benefit – the ritual itself is a way of pausing,
+            reflecting, and choosing what you want to invite into your life.
+          </p>
+          <p style="margin-top: 0.6rem;">
+            This page is here as a gentle anchor: a reminder that you&apos;re allowed to begin again,
+            and that small, honest rituals can be a quiet way of saying
+            <em>&quot;I&apos;m taking my life, my energy, and my attention seriously.&quot;</em>
+          </p>
+        </div>
+      </div>
 
       <div class="grid-two" style="margin-top: 1.3rem;">
         <div class="mini-card">
-          <h3>Next new moon window</h3>
-          <div class="moon-countdown">
-            <div class="moon-label">Time until next new moon:</div>
-            <div class="moon-timer" id="moon-timer">Calculating…</div>
-            <div class="moon-note">
-              This is a powerful window for <strong>setting intentions</strong>, journaling,
-              and visualizing the life you&apos;re growing toward.
-            </div>
-          </div>
-
-          <p style="margin-top: 0.75rem; font-size: 0.86rem;">
-            You can keep things simple:
+          <h3>New moon intentions</h3>
+          <p style="font-size: 0.86rem;">
+            The new moon is often treated as a blank page. You can keep things simple:
           </p>
-          <ul class="list">
+          <ul class="list" style="margin-top: 0.6rem;">
             <li>Light a <strong>white candle</strong> for clarity, or a <strong>green candle</strong> for growth/abundance.</li>
             <li>Take a few slow breaths to settle your body.</li>
             <li>Write 3–5 intentions in the present tense, as if they&apos;re already unfolding.</li>
             <li>Read them out loud slowly, with gratitude.</li>
           </ul>
+          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+            You can close by saying something like:
+            <em>&quot;Thank you for the ways this is already shifting, even if I can&apos;t see it yet.&quot;</em>
+          </p>
         </div>
 
         <div class="mini-card">
@@ -637,10 +753,6 @@
               Try: <em>&quot;I am calling in relationships that feel mutual, healthy, and nourishing.&quot;</em>
             </li>
           </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
-            You can close by saying something like:
-            <em>&quot;Thank you for the ways this is already shifting, even if I can&apos;t see it yet.&quot;</em>
-          </p>
         </div>
       </div>
 
@@ -720,8 +832,9 @@
 
     // Simple approximate moon phase calculator for next new moon
     (function () {
-      const timerEl = document.getElementById('moon-timer');
-      if (!timerEl) return;
+      const timerMain = document.getElementById('moon-timer-main');
+      const timerBig = document.getElementById('moon-timer');
+      if (!timerMain && !timerBig) return;
 
       // Reference new moon (UTC) and synodic month length
       const refNewMoon = Date.UTC(2000, 0, 6, 18, 14); // Jan 6, 2000 18:14 UTC (approx)
@@ -756,7 +869,10 @@
         const now = new Date();
         const nextNewMoon = getNextNewMoon(now);
         const delta = nextNewMoon.getTime() - now.getTime();
-        timerEl.textContent = formatTimeDelta(delta);
+        const text = formatTimeDelta(delta);
+
+        if (timerMain) timerMain.textContent = text;
+        if (timerBig) timerBig.textContent = text;
       }
 
       updateCountdown();
@@ -765,3 +881,4 @@
   </script>
 </body>
 </html>
+
