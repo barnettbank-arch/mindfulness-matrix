@@ -9,7 +9,7 @@
   <meta name="google-site-verification" content="Wqvkfm7BZ9lZX8gT28HkCeC7-UY81wgDITd3e7D9rJI" />
 
   <!-- Basic SEO -->
-  <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, moon rituals, breathwork, and tarot reflections for nervous system calm and mindful presence.">
+  <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, moon rituals, breathwork, and daily tarot reflections for nervous system calm and mindful presence.">
   <meta name="keywords" content="forest meditation,guided meditation,mindfulness,meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,moon rituals,breathwork,tarot reading,The Mindfulness Matrix,calming video,meditation for beginners">
   <meta name="author" content="The Mindfulness Matrix" />
 
@@ -70,13 +70,13 @@
       z-index: 20;
       backdrop-filter: blur(16px);
       background: linear-gradient(to bottom, rgba(247, 246, 242, 0.98), rgba(247, 246, 242, 0.86), transparent);
-      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     }
 
     .nav {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 1rem 1.1rem; /* thicker header */
+      padding: 0.9rem 1.1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -89,8 +89,9 @@
       gap: 0.75rem;
     }
 
+    /* FULL LOGO IMAGE – no more tiny "MM" circle */
     .logo-img {
-      height: 44px;          /* adjust this if logo needs to be larger/smaller */
+      height: 44px;
       width: auto;
       display: block;
     }
@@ -117,13 +118,13 @@
     }
 
     .pill-link {
-      padding: 0.4rem 0.85rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid rgba(35, 86, 69, 0.2);
+      border: 1px solid rgba(35, 86, 69, 0.25);
       background: var(--pill-bg);
       color: var(--accent-strong);
       font-weight: 500;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -139,7 +140,7 @@
     @media (max-width: 640px) {
       .nav {
         align-items: flex-start;
-        padding: 0.85rem 0.9rem;
+        padding: 0.75rem 0.9rem;
       }
       .nav-right {
         width: 100%;
@@ -162,7 +163,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.25fr);
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
       gap: 2rem;
       align-items: center;
       padding-top: 0.5rem;
@@ -219,19 +220,19 @@
     }
 
     .btn-primary {
-      padding: 0.7rem 1.35rem;
+      padding: 0.65rem 1.3rem;
       border-radius: 999px;
       border: none;
       background: linear-gradient(135deg, #2f6f5a, #46a17f);
       color: #f9fafb;
       font-weight: 600;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.4);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.35);
     }
 
     .btn-primary:hover {
@@ -240,7 +241,7 @@
     }
 
     .btn-ghost {
-      padding: 0.7rem 1.1rem;
+      padding: 0.65rem 1.05rem;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       background: #f9fafb;
@@ -287,8 +288,10 @@
       border-radius: 1.25rem;
       background: var(--card);
       border: 1px solid var(--border-soft);
-      padding: 1rem;
+      padding: 0.8rem;
       box-shadow: var(--shadow-soft);
+      max-width: 460px;       /* smaller player like before */
+      margin: 0 auto;
     }
 
     .player-shell {
@@ -307,7 +310,7 @@
     }
 
     .player-caption {
-      padding: 0.7rem 0.8rem 0.4rem;
+      padding: 0.6rem 0.7rem 0.4rem;
       font-size: 0.8rem;
       color: var(--muted);
     }
@@ -316,7 +319,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.4rem;
+      margin-top: 0.35rem;
       margin-bottom: 0.25rem;
     }
 
@@ -504,15 +507,9 @@
     /* Tarot section */
     .tarot-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
       margin-top: 1rem;
-    }
-
-    @media (max-width: 800px) {
-      .tarot-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
     }
 
     .tarot-card-shell {
@@ -621,6 +618,34 @@
 
     .btn-outline:hover {
       background: #ecf5f1;
+    }
+
+    .tarot-guide {
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      font-size: 0.86rem;
+      color: #374151;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .tarot-guide h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.4rem;
+      color: var(--accent-strong);
+    }
+
+    .tarot-guide ul {
+      margin-top: 0.4rem;
+      padding-left: 1rem;
+    }
+
+    .tarot-guide li {
+      margin-bottom: 0.25rem;
+      font-size: 0.84rem;
     }
 
     .tarot-note {
@@ -879,85 +904,9 @@
           </p>
         </div>
       </div>
-
-      <div class="grid-two" style="margin-top: 1.2rem;">
-        <div class="mini-card">
-          <h3>Full moon release</h3>
-          <p style="font-size: 0.86rem;">
-            Around the full moon, you can do a simple <strong>letting-go ritual</strong>. Use a darker candle (deep blue, purple, or black) and name what you&apos;re ready to release:
-          </p>
-          <ul class="list" style="margin-top: 0.6rem;">
-            <li>Old stories about yourself</li>
-            <li>Patterns that exhaust you</li>
-            <li>Relationships or habits that no longer feel aligned</li>
-          </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
-            You might write them down and say:
-            <em>&quot;I release this with love. Thank you for what it taught me, and I&apos;m ready to move forward.&quot;</em>
-          </p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Make it your own</h3>
-          <p style="font-size: 0.86rem;">
-            There&apos;s no one &quot;right&quot; way to do moon work. You can add:
-          </p>
-          <ul class="list" style="margin-top: 0.6rem;">
-            <li>Music or a guided meditation</li>
-            <li>Crystals or objects that feel meaningful</li>
-            <li>A bath, a walk under the sky, or journaling afterwards</li>
-          </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
-            The point isn&apos;t perfection – it&apos;s presence. A few honest minutes with yourself,
-            on purpose, is already powerful work.
-          </p>
-        </div>
-      </div>
     </section>
 
-    <!-- MINDFUL PRACTICES (CRYSTALS / SMUDGE / ETC) -->
-    <section class="section">
-      <h2>Mindful Tools &amp; Practices</h2>
-      <p>
-        In addition to meditations and moon work, many people like to build small rituals around crystals, smoke cleansing, and tarot as a way of marking intention.
-      </p>
-
-      <div class="grid-two" style="margin-top: 1.2rem;">
-        <div class="mini-card">
-          <h3>Crystals &amp; altars</h3>
-          <p style="font-size: 0.86rem;">
-            Simple suggestions:
-          </p>
-          <ul class="list">
-            <li><strong>Amethyst:</strong> calm, dream time, emotional reset.</li>
-            <li><strong>Rose quartz:</strong> self-kindness, relational softness.</li>
-            <li><strong>Citrine:</strong> creativity, energy, gentle confidence.</li>
-          </ul>
-          <p style="margin-top: 0.5rem; font-size: 0.84rem;">
-            You can place a few stones by a candle, your journal, or wherever you sit to meditate.
-            The meaning is in the attention you bring, not in doing it “perfectly.”
-          </p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Smoke cleansing &amp; sound</h3>
-          <p style="font-size: 0.86rem;">
-            If you enjoy smoke or scent, you might use:
-          </p>
-          <ul class="list">
-            <li>Ethically sourced incense or resins.</li>
-            <li>Local herbs you have a relationship with.</li>
-            <li>A simple chime or bell between intentions.</li>
-          </ul>
-          <p style="margin-top: 0.5rem; font-size: 0.84rem;">
-            The invitation: treat the space as sacred because <em>you</em> are in it. Let each small
-            gesture be a way of saying, &quot;I&apos;m willing to meet myself here.&quot;
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DAILY TAROT -->
+    <!-- DAILY TAROT (WITH BUILT-IN GUIDEBOOK) -->
     <section class="section" id="tarot">
       <h2>Daily Tarot Reflection</h2>
       <p>
@@ -995,16 +944,21 @@
           </div>
         </div>
 
-        <div class="mini-card">
+        <div class="tarot-guide">
           <h3>How to use this pull</h3>
-          <p style="font-size: 0.86rem;">
+          <p>
             1. Take a slow breath in and out.<br/>
             2. Click <strong>Draw today&apos;s card</strong> and see what appears.<br/>
             3. Notice your first reaction — curiosity, resistance, resonance.<br/>
             4. Journal on the reflection question for 5–10 minutes, or simply keep it in mind as you move through your day.
           </p>
-          <p style="margin-top: 0.6rem; font-size: 0.84rem;">
-            If a card doesn&apos;t resonate at all, that&apos;s data too. You can ask, &quot;What about this doesn&apos;t fit me right now?&quot; and let that guide the exploration.
+          <ul>
+            <li>If a card doesn&apos;t resonate, ask: &quot;What about this doesn&apos;t fit me right now?&quot;</li>
+            <li>Let the artwork and keywords be a mirror rather than a verdict.</li>
+            <li>Pair your pull with a short breath practice or meditation for extra grounding.</li>
+          </ul>
+          <p class="tarot-note">
+            This is your daily check-in with your own intuition — the deck just gives your inner voice something to speak through.
           </p>
         </div>
       </div>
@@ -1024,8 +978,8 @@
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- New moon countdown (simple placeholder date; update as needed) ---
-    // Set this to the next upcoming new moon in your timezone.
+    // --- New moon countdown (set to an example date; update as needed) ---
+    // TODO: Update this to the next real new moon date in your timezone
     const nextNewMoon = new Date("2025-11-29T00:00:00Z");
 
     function formatTimeDiff(diffMs) {
@@ -1059,7 +1013,7 @@
       tarotDeck.push({ name, keywords, meaning, prompt });
     }
 
-    // A small themed subset for now
+    // Small themed subset
     addCard(
       "The Wanderer (The Fool)",
       "new path, trust, beginner’s heart",
@@ -1096,11 +1050,10 @@
     );
 
     function drawCardForToday() {
-      if (tarotDeck.length === 0) return;
+      if (tarotDeck.length === 0) return null;
       const today = new Date();
       const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-      // simple deterministic pick based on date
-      const index = seed % tarotDeck.length;
+      const index = seed % tarotDeck.length; // deterministic daily pick
       return tarotDeck[index];
     }
 
@@ -1120,7 +1073,7 @@
     // Initialize with today's card
     renderCard(drawCardForToday());
 
-    // Button handler
+    // Button handler – re-renders today's card on click (so it's never "broken")
     const drawBtn = document.getElementById("draw-tarot");
     if (drawBtn) {
       drawBtn.addEventListener("click", () => {
@@ -1130,3 +1083,4 @@
   </script>
 </body>
 </html>
+
