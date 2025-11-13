@@ -10,7 +10,7 @@
 
   <!-- Basic SEO -->
   <meta name="description" content="The Mindfulness Matrix offers cinematic guided meditations with nature visuals, Solfeggio frequencies, and soothing narration to calm the nervous system, reduce anxiety, and deepen presence." />
-  <meta name="keywords" content="forest meditation,guided meditation,mindfulness meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,The Mindfulness Matrix,calming video,meditation for beginners" />
+  <meta name="keywords" content="forest meditation,guided meditation,mindfulness meditation,cinematic meditation,relaxing nature video,stress relief,anxiety relief,sleep meditation,solfeggio 528hz,beach meditation,nature sounds,The Mindfulness Matrix,calming video,meditation for beginners,breathwork,moon rituals" />
   <meta name="author" content="The Mindfulness Matrix" />
 
   <!-- Open Graph (link previews) -->
@@ -121,8 +121,10 @@
 
     .nav-right {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 0.75rem;
+      justify-content: flex-end;
+      gap: 0.5rem;
       font-size: 0.78rem;
     }
 
@@ -427,7 +429,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
     }
 
     .moon-orb {
@@ -508,6 +509,7 @@
       margin-top: 2rem;
       font-size: 0.76rem;
       color: var(--muted);
+      background: rgba(247, 245, 240, 0.9);
     }
 
     .footer-inner {
@@ -528,7 +530,7 @@
 
     .social-row a {
       font-size: 0.78rem;
-      color: #4e554a;
+      color: #3e5a4a;
     }
   </style>
 </head>
@@ -542,12 +544,15 @@
           <div class="tagline-mini">Cinematic guided meditations for a calmer nervous system</div>
         </div>
       </div>
+
       <div class="nav-right">
-        <a class="pill-link" href="#moon-rituals">
-          <span>Moon Rituals</span>
-        </a>
+        <a class="pill-link" href="#moon-rituals">Moon Rituals</a>
+        <a class="pill-link" href="#breathwork">Breathwork</a>
+        <a class="pill-link" href="#sleep">Sleep</a>
+        <a class="pill-link" href="#journal">Journal</a>
+        <a class="pill-link" href="#getting-started">Getting Started</a>
         <a class="pill-link" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-          <span>Visit YouTube Channel</span>
+          Visit YouTube
         </a>
       </div>
     </div>
@@ -560,7 +565,7 @@
       <span class="moon-banner-timer" id="moon-banner-timer">Calculating…</span>
     </div>
 
-    <!-- HERO -->
+    <!-- Hero / Featured video -->
     <section class="hero">
       <div>
         <div class="eyebrow">Guided Meditation · Nature · Solfeggio</div>
@@ -572,8 +577,8 @@
           Breathe in. Breathe out. Begin again. Explore meditations crafted for calm, sleep, emotional reset, and gentle presence.
         </p>
         <div class="hero-actions">
-          <a class="btn-primary" href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">
-            ▶ Watch on YouTube
+          <a class="btn-primary" href="https://www.youtube.com/watch?v=crEhbeviKkA" target="_blank" rel="noopener noreferrer">
+            ▶ Watch “Forest of Stillness”
           </a>
           <a class="btn-ghost" href="#about">
             Learn more about the project
@@ -598,7 +603,8 @@
       <div>
         <div class="card">
           <div class="player-shell">
-            <iframe class="player-iframe"
+            <iframe
+              class="player-iframe"
               src="https://www.youtube.com/embed/crEhbeviKkA"
               title="Forest of Stillness – Guided Meditation by The Mindfulness Matrix"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -618,11 +624,11 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- About -->
     <section class="section" id="about">
       <h2>About The Mindfulness Matrix</h2>
       <p>
-        The Mindfulness Matrix is a cinematic meditation project created to support nervous system calm, mindful presence, and emotional renewal. Each session weaves together nature cinematography, Mira&apos;s gentle voice, and subtle Solfeggio frequencies to help you slow down, breathe deeper, and reconnect with the part of you that is already still.
+        The Mindfulness Matrix is a cinematic meditation project created to support nervous system calm, mindful presence, and emotional renewal. Each session weaves together nature cinematography, gentle narration, and subtle Solfeggio frequencies to help you slow down, breathe deeper, and reconnect with the part of you that is already still.
       </p>
 
       <div class="grid-two" style="margin-top: 1.25rem;">
@@ -647,7 +653,7 @@
       </div>
     </section>
 
-    <!-- SERIES & PLAYLISTS -->
+    <!-- Series & Playlists -->
     <section class="section">
       <h2>Series &amp; Playlists</h2>
       <p>
@@ -685,10 +691,9 @@
       </div>
     </section>
 
-    <!-- MOON RITUALS -->
+    <!-- Moon Rituals -->
     <section class="section" id="moon-rituals">
       <h2>Moon Rituals &amp; Intention Setting</h2>
-
       <div class="moon-hero">
         <div class="moon-copy-block">
           <p>
@@ -697,18 +702,21 @@
             have to believe in anything mystical to benefit from it – the ritual itself is a way of pausing,
             reflecting, and choosing what you want to invite into your life.
           </p>
-          <p style="margin-top: 0.75rem;">
-            You can keep things simple: a candle, a few honest sentences on paper, and a moment to breathe and say,
-            &quot;I&apos;m ready for this to shift.&quot;
+          <p style="margin-top:0.75rem;">
+            On this page, you&apos;ll find a live countdown to the next new moon, plus simple suggestions for
+            how to set intentions, write them, and close your ritual with genuine gratitude.
           </p>
         </div>
 
         <div class="moon-orb-wrap">
-          <div class="moon-orb"></div>
-          <div class="moon-big-timer" id="moon-timer">Calculating…</div>
-          <div class="moon-big-label">Time until next new moon</div>
-          <div class="moon-big-note">
-            A powerful window for <strong>setting intentions</strong>, journaling, and visualizing the life you&apos;re growing toward.
+          <div>
+            <div class="moon-orb"></div>
+            <div class="moon-big-label">Time until next new moon</div>
+            <div class="moon-big-timer" id="moon-timer">Calculating…</div>
+            <div class="moon-big-note">
+              This is a powerful window for <strong>setting intentions</strong>, journaling,
+              and visualizing the life you&apos;re growing toward.
+            </div>
           </div>
         </div>
       </div>
@@ -716,8 +724,8 @@
       <div class="grid-two" style="margin-top: 1.3rem;">
         <div class="mini-card">
           <h3>Simple new moon ritual</h3>
-          <p style="font-size: 0.86rem;">
-            On or near the new moon:
+          <p style="font-size:0.86rem;">
+            You can keep things simple:
           </p>
           <ul class="list">
             <li>Light a <strong>white candle</strong> for clarity, or a <strong>green candle</strong> for growth/abundance.</li>
@@ -725,15 +733,18 @@
             <li>Write 3–5 intentions in the present tense, as if they&apos;re already unfolding.</li>
             <li>Read them out loud slowly, with gratitude.</li>
           </ul>
+          <p style="margin-top:0.6rem;font-size:0.86rem;">
+            You might close with: <em>&quot;Thank you for the ways this is already shifting, even if I can&apos;t see it yet.&quot;</em>
+          </p>
         </div>
 
         <div class="mini-card">
           <h3>How to word intentions</h3>
-          <p style="font-size: 0.86rem;">
+          <p style="font-size:0.86rem;">
             Intentions work best when they are <strong>specific, kind, and present-tense</strong>.
             You&apos;re not begging the universe; you&apos;re partnering with it.
           </p>
-          <ul class="list" style="margin-top: 0.6rem;">
+          <ul class="list" style="margin-top:0.6rem;">
             <li>
               Instead of: <em>&quot;I don&apos;t want to be anxious anymore.&quot;</em><br />
               Try: <em>&quot;I am learning to feel safe slowing down, one breath at a time.&quot;</em>
@@ -747,26 +758,22 @@
               Try: <em>&quot;I am calling in relationships that feel mutual, healthy, and nourishing.&quot;</em>
             </li>
           </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
-            You can close by saying something like:
-            <em>&quot;Thank you for the ways this is already shifting, even if I can&apos;t see it yet.&quot;</em>
-          </p>
         </div>
       </div>
 
       <div class="grid-two" style="margin-top: 1.2rem;">
         <div class="mini-card">
           <h3>Full moon release</h3>
-          <p style="font-size: 0.86rem;">
+          <p style="font-size:0.86rem;">
             Around the full moon, you can do a simple <strong>letting-go ritual</strong>. Use a darker
             candle (deep blue, purple, or black) and name what you&apos;re ready to release:
           </p>
-          <ul class="list" style="margin-top: 0.6rem;">
+          <ul class="list" style="margin-top:0.6rem;">
             <li>Old stories about yourself</li>
             <li>Patterns that exhaust you</li>
             <li>Relationships or habits that no longer feel aligned</li>
           </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+          <p style="margin-top:0.6rem;font-size:0.86rem;">
             You might write them down and say:
             <em>&quot;I release this with love. Thank you for what it taught me, and I&apos;m ready to move forward.&quot;</em>
           </p>
@@ -774,15 +781,15 @@
 
         <div class="mini-card">
           <h3>Make it your own</h3>
-          <p style="font-size: 0.86rem;">
+          <p style="font-size:0.86rem;">
             There&apos;s no one &quot;right&quot; way to do moon work. You can add:
           </p>
-          <ul class="list" style="margin-top: 0.6rem;">
+          <ul class="list" style="margin-top:0.6rem;">
             <li>Music or a guided meditation</li>
             <li>Crystals or objects that feel meaningful</li>
             <li>A bath, a walk under the sky, or journaling afterwards</li>
           </ul>
-          <p style="margin-top: 0.6rem; font-size: 0.86rem;">
+          <p style="margin-top:0.6rem;font-size:0.86rem;">
             The point isn&apos;t perfection – it&apos;s presence. A few honest minutes with yourself,
             on purpose, is already powerful work.
           </p>
@@ -790,26 +797,244 @@
       </div>
     </section>
 
-    <!-- CONNECT -->
-    <section class="section">
-      <h2>Connect &amp; Follow</h2>
+    <!-- Breathwork -->
+    <section class="section" id="breathwork">
+      <h2>Breathwork for a Calmer Nervous System</h2>
       <p>
-        The Mindfulness Matrix is an evolving project. If a particular session resonates with you, sharing how it landed can help shape future journeys.
+        Your breath is the simplest way to talk to your nervous system. These are short, practical patterns
+        you can use before a meditation, during a stressful moment, or as a stand-alone reset in the middle
+        of your day.
       </p>
-      <div class="grid-two" style="margin-top: 1.1rem;">
+
+      <div class="grid-two" style="margin-top:1.2rem;">
         <div class="mini-card">
-          <h3>Stay in the loop</h3>
-          <p>
-            Subscribe on YouTube to receive new cinematic meditations as they&apos;re released. Forests, beaches, rain, and quiet sky — all crafted for inner stillness.
+          <h3>Box breathing (4–4–4–4)</h3>
+          <p style="font-size:0.86rem;">
+            Great for: gentle focus, pre-meeting nerves, feeling scattered.
           </p>
-          <p style="margin-top: 0.5rem;">
-            <a href="https://www.youtube.com/@TheMindfulnessMatrix" target="_blank" rel="noopener noreferrer">Subscribe to The Mindfulness Matrix →</a>
+          <ul class="list">
+            <li>Inhale through the nose for a slow count of 4.</li>
+            <li>Hold gently for 4.</li>
+            <li>Exhale through the mouth for 4.</li>
+            <li>Hold again for 4, without strain.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            Repeat for 4–8 rounds. If 4 feels too long, make it 3–3–3–3. The shape matters less than the softness.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Extended exhale (4–6)</h3>
+          <p style="font-size:0.86rem;">
+            Great for: anxiety spikes, racing thoughts, difficulty winding down.
+          </p>
+          <ul class="list">
+            <li>Inhale through the nose for a count of 4.</li>
+            <li>Exhale through the mouth for a count of 6 (or 8 if comfortable).</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            Longer exhales signal “you are safe” to the nervous system. If you feel dizzy, shorten the counts and soften the effort.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>4–7–8 Breath</h3>
+          <p style="font-size:0.86rem;">
+            Great for: bedtime, middle-of-the-night wakeups, overthinking.
+          </p>
+          <ul class="list">
+            <li>Inhale through the nose for 4.</li>
+            <li>Hold gently for 7.</li>
+            <li>Exhale through the mouth for 8.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            Try 3–4 rounds. If 7 and 8 feel too long, shrink the numbers but keep the <strong>exhale longer than the inhale</strong>.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Physiological sigh</h3>
+          <p style="font-size:0.86rem;">
+            Great for: immediate stress relief, after a hard conversation, when emotion spikes.
+          </p>
+          <ul class="list">
+            <li>Take a deep inhale through the nose.</li>
+            <li>Take a second, smaller sip of air on top of the first.</li>
+            <li>Exhale slowly and fully through the mouth with a soft sigh.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            Repeat 2–5 times. It’s a natural pattern your body uses on its own when you cry or release tension.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem;font-size:0.86rem;">
+        You can pair any of these with <strong>Forest of Stillness</strong> or future meditations from The Mindfulness Matrix.
+        Use breath first to soften the edges, then let the visuals and narration guide you deeper.
+      </p>
+    </section>
+
+    <!-- Getting Started / How to Use -->
+    <section class="section" id="getting-started">
+      <h2>How to Use These Meditations</h2>
+      <p>
+        You don&apos;t have to sit perfectly still, empty your mind, or &quot;be good at meditation&quot; to
+        benefit. These sessions are designed for real humans with real lives, nervous systems, and thoughts.
+      </p>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>Where to start</h3>
+          <ul class="list">
+            <li>If you&apos;re anxious or wired: start with <strong>Forest of Stillness</strong> and some extended exhale breathing.</li>
+            <li>If you&apos;re exhausted: lie down, close your eyes, and let the audio play while you rest.</li>
+            <li>If you&apos;re curious but skeptical: give yourself 5–10 minutes and notice how your body feels afterwards.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>Common worries (and gentle truths)</h3>
+          <ul class="list">
+            <li><strong>&quot;My mind won&apos;t shut up.&quot;</strong> That&apos;s okay. Minds think. The practice is simply noticing, and returning.</li>
+            <li><strong>&quot;I can&apos;t sit still.&quot;</strong> You can lie down, fidget, stretch, or pause the video. There&apos;s no meditation police.</li>
+            <li><strong>&quot;I fall asleep.&quot;</strong> That might be what your system needs. Over time, you can experiment with posture and timing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>How long should I meditate?</h3>
+          <p style="font-size:0.86rem;">
+            Start with <strong>what you&apos;ll actually do</strong>. Five honest minutes once a day is more powerful
+            than aiming for 30 minutes and doing it twice a month. Let repetition matter more than duration.
           </p>
         </div>
         <div class="mini-card">
-          <h3>Collaborations &amp; notes</h3>
-          <p>
-            For mindful collaborations or to share how a session has supported you, reach out via your preferred platform (YouTube comments, social, or a future contact page here).
+          <h3>How often?</h3>
+          <p style="font-size:0.86rem;">
+            Aim for <strong>a few times a week</strong> at first. You can stack meditations with things you already do:
+            before bed, after a shower, during a lunch break, or as part of your new or full moon ritual.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sleep -->
+    <section class="section" id="sleep">
+      <h2>Sleep Rituals &amp; Night Practices</h2>
+      <p>
+        Sleep isn&apos;t just about what happens when the lights go off. The 30–60 minutes before bed can make a huge
+        difference in how safe and settled your body feels when you finally close your eyes.
+      </p>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>Simple evening ritual (10–20 minutes)</h3>
+          <ul class="list">
+            <li><strong>Step 1:</strong> Dim your lights or switch to softer, warmer light.</li>
+            <li><strong>Step 2:</strong> Do 3–5 minutes of extended exhale or 4–7–8 breathing.</li>
+            <li><strong>Step 3:</strong> Put on a guided meditation (like <strong>Forest of Stillness</strong>) or future beach sessions.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            If you scroll your phone, try to do it <em>after</em> your ritual instead of before. Let your nervous system taste calm first.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Middle-of-the-night wakeups</h3>
+          <p style="font-size:0.86rem;">
+            If you wake up at 3 AM and your mind is racing:
+          </p>
+          <ul class="list">
+            <li>Place a hand on your chest or belly; feel the contact.</li>
+            <li>Try 10–20 gentle extended exhales.</li>
+            <li>If you&apos;re wide awake, listen to a soft meditation or soundscape rather than fighting it.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            The goal isn&apos;t perfect sleep; it&apos;s less struggle around it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal Prompts -->
+    <section class="section" id="journal">
+      <h2>Journal Prompts After Meditation</h2>
+      <p>
+        Writing for a few minutes after a meditation can help you integrate what you felt, noticed, or released.
+        You don&apos;t have to write anything profound – think of it as a quiet check-in with yourself.
+      </p>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>Emotional check-in</h3>
+          <ul class="list">
+            <li>&quot;Right now, I feel… and I think it&apos;s because…&quot;</li>
+            <li>&quot;One emotion that surprised me today was…&quot;</li>
+            <li>&quot;If my nervous system could talk, it would say…&quot;</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>Body &amp; nervous system</h3>
+          <ul class="list">
+            <li>&quot;During this meditation, my body softened when…&quot;</li>
+            <li>&quot;A place in my body that wants more kindness from me is…&quot;</li>
+            <li>&quot;Three small things that help my body feel safer are…&quot;</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>Future &amp; intention</h3>
+          <ul class="list">
+            <li>&quot;If I treated myself 10% more gently for the next 24 hours, I would…&quot;</li>
+            <li>&quot;One thing I&apos;m ready to let go of, even a little, is…&quot;</li>
+            <li>&quot;One thing I&apos;m quietly hoping for is… and the next kind step I can take is…&quot;</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>How to use these prompts</h3>
+          <p style="font-size:0.86rem;">
+            Choose <strong>one prompt</strong> after a meditation and write for 3–5 minutes. Don&apos;t worry about grammar or sounding wise.
+            This is for you. You can pair specific prompts with specific sessions, or just follow what your body is asking for that day.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="section" id="resources">
+      <h2>Resources for Sensitive Nervous Systems</h2>
+      <p>
+        The Mindfulness Matrix is built for humans whose systems tend to run hot: anxious, overthinking, creative, sensitive.
+        These practices and tools are meant to meet you where you are, not where you think you &quot;should&quot; be.
+      </p>
+
+      <div class="grid-two" style="margin-top:1.2rem;">
+        <div class="mini-card">
+          <h3>Ritual “stack” ideas</h3>
+          <ul class="list">
+            <li><strong>Quick reset:</strong> 3 physiological sighs + 5 minutes of Forest of Stillness.</li>
+            <li><strong>Evening wind-down:</strong> Extended exhale + guided meditation + brief journaling.</li>
+            <li><strong>New moon ritual:</strong> Breathwork + intention setting + candle + meditation.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>Supportive tools</h3>
+          <ul class="list">
+            <li>Soft, indirect lighting (lamps, candles, salt lamp).</li>
+            <li>Headphones for immersive sound without blasting the room.</li>
+            <li>A dedicated &quot;calm corner&quot; with blankets, pillows, or anything that feels grounding.</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.86rem;">
+            None of these are required. They&apos;re just invitations – choose what actually feels supportive, not performative.
           </p>
         </div>
       </div>
@@ -831,7 +1056,7 @@
 
     // Approximate next new moon calculation
     function getNextNewMoon() {
-      // A recent known new moon date (UTC). This is just for an approximate countdown.
+      // Base: a recent new moon date (can be adjusted over time)
       const base = new Date('2024-11-01T13:47:00Z');
       const lunationMs = 29.5306 * 24 * 60 * 60 * 1000; // ~29.53 days
       const now = new Date();
@@ -868,9 +1093,9 @@
 
       const text =
         days + 'd · ' +
-        hours + 'h · ' +
-        minutes + 'm · ' +
-        seconds + 's';
+        hours.toString().padStart(2, '0') + 'h · ' +
+        minutes.toString().padStart(2, '0') + 'm · ' +
+        seconds.toString().padStart(2, '0') + 's';
 
       if (bannerEl) bannerEl.textContent = text;
       if (bigEl) bigEl.textContent = text;
@@ -882,4 +1107,5 @@
   </script>
 </body>
 </html>
+
 
